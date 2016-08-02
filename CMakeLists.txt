@@ -8,9 +8,11 @@ set(SRC
 include_directories(include)
 
 add_subdirectory(tgbot-cpp)
+add_subdirectory(SQLiteCpp)
 
 include_directories(tgbot-cpp/include)
+include_directories(SQLiteCpp/include)
 
 add_executable(${PROJECT_NAME} ${SRC})
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 14)
-target_link_libraries(${PROJECT_NAME} TgBot)
+target_link_libraries(${PROJECT_NAME} TgBot SQLiteCpp)
